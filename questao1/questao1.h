@@ -3,6 +3,9 @@
  uma estrutura tão grande não deve ser passada como parametro, então, é criado uma struct, alocado um espaço na memoria 
  e utiliza-se de um ponteiro para passar o vetor às funções.
 */
+struct tipoVetor{
+    int vet[1000000];
+};
 
 typedef struct tipoVetor tipoVetor;
 

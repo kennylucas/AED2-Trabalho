@@ -8,9 +8,11 @@
 #include <stdlib.h>
 //#include <time.h>
 
+/*
 struct tipoVetor{
     int vet[1000000];
 };
+*/
 
 #include "questao1.h"
 
