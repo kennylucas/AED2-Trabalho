@@ -31,3 +31,6 @@ int finalLista(Lista* lista);
 
 // Função que responde se a lista está vazia
 short listaVazia(Lista* lista);
+
+void imprimirNum(int num);
+

@@ -18,7 +18,7 @@ int main(){
     double mediaSequencial, mediaBinaria;
     mediaSequencial = mediaBinaria = 0;
     tipoVetor *tp = criaVetor();
-    preencherVetorAleatoriamente(tp, 100);
+    preencherVetorAleatoriamente(tp, TAMANHO);
 
     for(int i=0;i<30;i++){
         chave = rand()%10000000000;
@@ -43,8 +43,8 @@ int main(){
     mediaBinaria = mediaBinaria/30;
     mediaSequencial = mediaSequencial/30;
 
-    printf("Media da busca sequencial: %lf\n",mediaSequencial);
-	printf("Media da busca binaria: %lf\n",mediaBinaria);
+    printf("Media da busca sequencial: %lfms\n",mediaSequencial*100);
+	printf("Media da busca binaria: %lfms\n",mediaBinaria*100);
 
     /*for(int i =0; i<100;i++){
         printf("%d\n", tp->vet[i]);
