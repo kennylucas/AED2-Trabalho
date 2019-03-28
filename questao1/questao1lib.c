@@ -16,8 +16,6 @@ struct tipoVetor{
     int vet[1000000];
 };
 
-
-
 tipoVetor* criaVetor(){
     tipoVetor *tp = (tipoVetor *) malloc(sizeof(tipoVetor));
     return tp;
