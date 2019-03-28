@@ -7,16 +7,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 //#include <time.h>
-
-
 #include "questao1.h"
-
 
 struct tipoVetor{
     int vet[1000000];
 };
-
-
 
 tipoVetor* criaVetor(){
     tipoVetor *tp = (tipoVetor *) malloc(sizeof(tipoVetor));
