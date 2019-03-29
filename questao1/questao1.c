@@ -12,6 +12,9 @@
 
 int main(){
 
+    srand(time(NULL));//necessario pra gerar um valor aleatório diferente em cada execução. 
+	//isso altera a semente de aleatoriedade da funcao rand();
+
     clock_t inicio, final;
     int chave;
     double clockTime;
