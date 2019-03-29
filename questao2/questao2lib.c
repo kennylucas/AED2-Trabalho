@@ -102,6 +102,11 @@ void percorrerLista(Lista* lista, Callback callback){
 	}
 }
 
+void imprimirNum(int num){
+	printf("%d ", num);
+
+}
+
 int inicioLista(Lista* lista){
 	return lista -> inicio -> num;
 }

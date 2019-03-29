@@ -4,14 +4,18 @@
 #include "questao1.h"
 #include "questao2.h"
 #define TAMANHO 1000000
+//#define NULL ((void *)0)
 
+/*
 void imprimirNum(int num){
-
 	printf("%d ", num);
 
-}
+}*/
 
 int main(void){
+
+	srand(time(NULL));//necessario pra gerar um valor aleatório diferente em cada execução. 
+	//isso altera a semente de aleatoriedade da funcao rand();
 
 	clock_t inicio, final;
 	int chave = 0;
@@ -33,27 +37,30 @@ int main(void){
 		chave = rand()%10000000;
 		printf("chave:%d\n", chave);
 		inicio = clock();
-		printf("%d\n",buscaSequencialLista(lista, chave));
+		buscaSequencialLista(lista, chave);
+		//printf("%d\n",buscaSequencialLista(lista, chave));
 		final = clock();
 		clockTime = ((double) (final - inicio)) / CLOCKS_PER_SEC;
         printf("Tempo de execução da Busca Sequencial na Lista %d: %.4lfms\n", i+1, clockTime*100);
 		mediaBuscaLista += clockTime;
 
 		inicio = clock();
-        printf("%d\n",buscaSequencial(tp, TAMANHO, chave));
+		buscaSequencial(tp, TAMANHO, chave);
+        //printf("%d\n",buscaSequencial(tp, TAMANHO, chave));
         final = clock();
         clockTime = ((double) (final - inicio)) / CLOCKS_PER_SEC;
         printf("Tempo de execução da Busca Sequencial no Vetor %d: %.4lfms\n\n\n", i+1, clockTime*100);
         mediaBuscaVetor += clockTime;
 		
 	}
+
+	mediaBuscaLista = mediaBuscaLista/30;
+    mediaBuscaVetor = mediaBuscaVetor/30;
+
+	printf("Media da busca sequencial na Lista: %lfms\n",mediaBuscaLista*100);
+	printf("Media da busca sequencial no Vetor: %lfms\n",mediaBuscaVetor*100);
+
 	//percorrerLista(lista, imprimirNum); printf("\n");
-
-
-	
-
-
-
 	/*
 	inserirFinalLista(lista, 1);
 	inserirFinalLista(lista, 2);
