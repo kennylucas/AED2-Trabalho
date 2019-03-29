@@ -10,13 +10,19 @@
 #include "questao1.h"
 #include "questao2.h"
 
+
 struct tipoVetor{
     int vet[1000000];
 };
 
+
 tipoVetor* criaVetor(){
     tipoVetor *tp = (tipoVetor *) malloc(sizeof(tipoVetor));
     return tp;
+}
+
+int retornaValorVetor(tipoVetor *p1, int indice){
+    return p1->vet[indice];
 }
 
 int buscaSequencial(tipoVetor *tp, int tamanho, int numero)
@@ -53,8 +59,12 @@ int buscaBinaria(tipoVetor *tp, int tamanho, int numero)
 //vet[i]=rand()%n; a função cria numeros aleatoriamente de 1 até n. 
 void preencherVetorAleatoriamente(tipoVetor *tp, int tamanho)
 {
-    tp->vet[0] = rand()%1;
+    tp->vet[0] = 0;
     for(int i=1; i<tamanho; i++){
-        tp->vet[i] =  tp->vet[i-1] + (rand()%10);
+        tp->vet[i] =  tp->vet[i-1] + (rand()%5);
+        //tp -> vet[tamanho] = 
     }
 }
+/*
+0 3 9 16 21 24 29 35 37 46 47 49 56 56 65 68 74 74 80 82 88 89 97 104 113 115 115 117 120 127 132 141 143 145 153 162 169 172 178 179 181 190 193 194 203 207 214 222 226 231 231 234 240 241 241 247 250 252 252 258 259 264 269 273 280 286 291 297 306 309 316 320 325 327 332 336 343 347 351 354 354 361 369 375 383 391 395 398 399 403 412 414 414 420 428 437 439 445 451 455 
+*/

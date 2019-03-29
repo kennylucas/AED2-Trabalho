@@ -15,6 +15,9 @@ int buscaSequencial(tipoVetor *tp, int tamanho, int numero);
 
 int buscaBinaria(tipoVetor *tp, int tamanho, int numero);
 
+int retornaValorVetor(tipoVetor *p1, int indice);
+
 void preencherVetorAleatoriamente(tipoVetor *tp, int tamanho);
 
 tipoVetor* criaVetor();
+

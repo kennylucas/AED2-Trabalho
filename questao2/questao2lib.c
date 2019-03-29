@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 #include "questao1.h"
 #include "questao2.h"
 
@@ -8,7 +9,6 @@ typedef struct elemento Elemento;
 struct elemento{
 	int num;
 	Elemento* prox;
-
 };
 
 Elemento* criarElemento(int num){
@@ -26,6 +26,21 @@ Lista* criarLista(void){
 	Lista* lista = (Lista*) malloc(sizeof(Lista));
 	lista -> inicio = lista -> final = NULL;
 	return lista;
+}
+
+int buscaSequencialLista(Lista* lista, int chave){
+
+	if(!listaVazia(lista)){
+		Elemento* aux = lista -> inicio;
+		while(aux != NULL){
+			if(aux -> num == chave){
+				return 1;
+			}
+			aux = aux -> prox;
+		}
+		return 0;
+	}
+	return 0;
 }
 
 void inserirInicioLista(Lista* lista, int num){
@@ -99,9 +114,4 @@ short listaVazia(Lista* lista){
 	return lista -> inicio == NULL && lista -> final == NULL;
 }
 
-void imprimirNum(int num){
-
-	printf("%d ", num);
-
-}
 

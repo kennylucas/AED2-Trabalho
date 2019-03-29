@@ -26,11 +26,12 @@ int inicioLista(Lista* lista);
 // Função que percorre a lista e aplica uma função callback para cada elemento
 void percorrerLista(Lista* lista, Callback callback);
 
+int buscaSequencialLista(Lista* lista, int chave);
+
 // Função que retorna o último elemento da lista
 int finalLista(Lista* lista);
 
 // Função que responde se a lista está vazia
 short listaVazia(Lista* lista);
 
-void imprimirNum(int num);
 
