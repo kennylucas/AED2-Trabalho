@@ -28,7 +28,7 @@ int main(){
         buscaSequencial(tp, TAMANHO, chave);
         final = clock();
         clockTime = ((double) (final - inicio)) / CLOCKS_PER_SEC;
-        printf("Tempo de esecução da Busca Sequencial %d: %.4lfms\n", i+1, clockTime*100);
+        printf("Tempo de execução da Busca Sequencial %d: %.4lfms\n", i+1, clockTime*100);
         mediaSequencial += clockTime;
 
         //execucao busca sequencial
@@ -36,7 +36,7 @@ int main(){
         buscaBinaria(tp, TAMANHO, chave);
         final = clock();
         clockTime = ((double) (final - inicio)) / CLOCKS_PER_SEC;
-        printf("Tempo de esecução da Busca Binaria %d: %.4lfms\n\n\n", i+1, clockTime*100);
+        printf("Tempo de execução da Busca Binaria %d: %.4lfms\n\n\n", i+1, clockTime*100);
         mediaBinaria += clockTime;
 
     }
