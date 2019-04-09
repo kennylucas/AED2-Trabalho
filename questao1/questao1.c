@@ -6,13 +6,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "questao1.h"
+#include "vetor.h"
 
 #define TAMANHO 1000000
 
 int main(){
 
-    srand(time(NULL));//necessario pra gerar um valor aleatório diferente em cada execução. 
+    srand(clock());//necessario pra gerar um valor aleatório diferente em cada execução. 
 	//isso altera a semente de aleatoriedade da funcao rand();
 
     clock_t inicio, final;
@@ -31,7 +31,7 @@ int main(){
         buscaSequencial(tp, TAMANHO, chave);
         final = clock();
         clockTime = ((double) (final - inicio)) / CLOCKS_PER_SEC;
-        printf("Tempo de execução da Busca Sequencial %d: %.4lfms\n", i+1, clockTime*100);
+        printf("Tempo de execução da Busca Sequencial %d: %.4lfms\n", i+1, clockTime*1000);
         mediaSequencial += clockTime;
 
         //execucao busca sequencial
@@ -39,15 +39,15 @@ int main(){
         buscaBinaria(tp, TAMANHO, chave);
         final = clock();
         clockTime = ((double) (final - inicio)) / CLOCKS_PER_SEC;
-        printf("Tempo de execução da Busca Binaria %d: %.4lfms\n\n\n", i+1, clockTime*100);
+        printf("Tempo de execução da Busca Binaria %d: %.4lfms\n\n\n", i+1, clockTime*1000);
         mediaBinaria += clockTime;
 
     }
     mediaBinaria = mediaBinaria/30;
     mediaSequencial = mediaSequencial/30;
 
-    printf("Media da busca sequencial: %lfms\n",mediaSequencial*100);
-	printf("Media da busca binaria: %lfms\n",mediaBinaria*100);
+    printf("Media da busca sequencial: %lfms\n",mediaSequencial*1000);
+	printf("Media da busca binaria: %lfms\n",mediaBinaria*1000);
 
     /*for(int i =0; i<100;i++){
         printf("%d\n", tp->vet[i]);

@@ -1,8 +1,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
-#include "questao1.h"
-#include "questao2.h"
+#include "vetor.h"
+#include "lista.h"
 #define TAMANHO 1000000
 //#define NULL ((void *)0)
 
@@ -14,7 +14,7 @@ void imprimirNum(int num){
 
 int main(void){
 
-	srand(time(NULL));//necessario pra gerar um valor aleatório diferente em cada execução. 
+	srand(clock());//necessario pra gerar um valor aleatório diferente em cada execução. 
 	//isso altera a semente de aleatoriedade da funcao rand();
 
 	clock_t inicio, final;
@@ -35,13 +35,13 @@ int main(void){
 	for(int i =0;i<30;i++){
 
 		chave = rand()%10000000;
-		printf("chave:%d\n", chave);
+		//printf("chave:%d\n", chave);
 		inicio = clock();
 		buscaSequencialLista(lista, chave);
 		//printf("%d\n",buscaSequencialLista(lista, chave));
 		final = clock();
 		clockTime = ((double) (final - inicio)) / CLOCKS_PER_SEC;
-        printf("Tempo de execução da Busca Sequencial na Lista %d: %.4lfms\n", i+1, clockTime*100);
+        printf("Tempo de execução da Busca Sequencial na Lista %d: %.4lfms\n", i+1, clockTime*1000);
 		mediaBuscaLista += clockTime;
 
 		inicio = clock();
@@ -49,7 +49,7 @@ int main(void){
         //printf("%d\n",buscaSequencial(tp, TAMANHO, chave));
         final = clock();
         clockTime = ((double) (final - inicio)) / CLOCKS_PER_SEC;
-        printf("Tempo de execução da Busca Sequencial no Vetor %d: %.4lfms\n\n\n", i+1, clockTime*100);
+        printf("Tempo de execução da Busca Sequencial no Vetor %d: %.4lfms\n\n\n", i+1, clockTime*1000);
         mediaBuscaVetor += clockTime;
 		
 	}
@@ -57,8 +57,8 @@ int main(void){
 	mediaBuscaLista = mediaBuscaLista/30;
     mediaBuscaVetor = mediaBuscaVetor/30;
 
-	printf("Media da busca sequencial na Lista: %lfms\n",mediaBuscaLista*100);
-	printf("Media da busca sequencial no Vetor: %lfms\n",mediaBuscaVetor*100);
+	printf("Media da busca sequencial na Lista: %lfms\n",mediaBuscaLista*1000);
+	printf("Media da busca sequencial no Vetor: %lfms\n",mediaBuscaVetor*1000);
 
 	//percorrerLista(lista, imprimirNum); printf("\n");
 	/*
