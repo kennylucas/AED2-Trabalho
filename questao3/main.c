@@ -20,13 +20,19 @@ void preencherVetores(int* vetA, int* vetB, int* vetC){
 
 int main(void){
 
-	int vetA[N], vetB[N], vetC[N];
+	int vetA[N], vetB[N], vetC[N], lixo;
 	clock_t inicio, fim;
 	double tempo, tempoQuick = 0.0, tempoInsertion = 0.0, tempoBolha = 0.0;
 
+	printf("vetores não preenchidos, digite 0 para continuar:\n");
+	scanf("%d", &lixo);
+	preencherVetores(vetA, vetB, vetC);
+	printf("vetores preenchidos, digite 0 para continuar:\n");
+	scanf("%d", &lixo);
+
 	for(int cont = 0; cont < RODADAS; cont++){
 
-		preencherVetores(vetA, vetB, vetC);
+		//preencherVetores(vetA, vetB, vetC);
 
 		printf("======== Rodada %02d ========\n\n", cont + 1);
 
@@ -47,6 +53,8 @@ int main(void){
 		fim = clock();
 		tempoBolha += tempo = (fim - inicio)/1000.0;
 		printf("Bolha: %.3lf ms\n\n", tempo);
+
+		preencherVetores(vetA, vetB, vetC);
 
 	}
 

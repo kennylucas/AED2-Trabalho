@@ -16,12 +16,18 @@ int main(){
 	//isso altera a semente de aleatoriedade da funcao rand();
 
     clock_t inicio, final;
-    int chave;
+    int chave, lixo;
     double clockTime;
     double mediaSequencial, mediaBinaria;
     mediaSequencial = mediaBinaria = 0;
+    printf("Vetor não criado, digite 0 para continuar.\n");
+    scanf("%d", &lixo);
     tipoVetor *tp = criaVetor();
+    printf("Vetor vazio, digite 0 para continuar.\n");
+    scanf("%d", &lixo);
     preencherVetorAleatoriamente(tp, TAMANHO);
+    printf("Vetor preenchido, digite 0 para continuar.\n");
+    scanf("%d", &lixo);
 
     for(int i=0;i<30;i++){
         chave = rand()%10000000000;

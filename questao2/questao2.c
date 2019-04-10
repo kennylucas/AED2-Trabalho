@@ -18,18 +18,26 @@ int main(void){
 	//isso altera a semente de aleatoriedade da funcao rand();
 
 	clock_t inicio, final;
-	int chave = 0;
+	int chave = 0, lixo;
 	double clockTime; 
 	double mediaBuscaVetor, mediaBuscaLista;
 	mediaBuscaLista = mediaBuscaVetor = 0;
 
 	Lista* lista = criarLista();
 	tipoVetor *tp = criaVetor();//o vetor que será usado esta criado e prenchido assim como a lista. 
+	printf("Vetor vazio e lista vazios, digite 0 para continuar.\n");
+	scanf("%d", &lixo);
 	preencherVetorAleatoriamente(tp, TAMANHO);
+	printf("Vetor preenchido e lista vazia, digite 0 para continuar.\n");
+    scanf("%d", &lixo);
+
 	
 	for(int i=0; i<TAMANHO; i++){
 		inserirFinalLista(lista, retornaValorVetor(tp,i));
 	}//aqui, o vetor é copiado para a lista. 
+
+	printf("Vetor e lista preenchidos, digite 0 para continuar.\n");
+    scanf("%d", &lixo);
 
 	//percorrerLista(lista, imprimirNum); printf("\n");
 	for(int i =0;i<30;i++){
