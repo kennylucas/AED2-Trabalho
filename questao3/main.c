@@ -2,11 +2,13 @@
 #include <stdlib.h>
 #include <time.h>
 #include "ordenacao.h"
+#include "vetor.h"
 #define N 100000
 #define MAX 1000000
 #define MIN -1000000
 #define RODADAS 30
 
+/*
 void preencherVetores(int* vetA, int* vetB, int* vetC){
 
 	srand(clock());
@@ -14,6 +16,7 @@ void preencherVetores(int* vetA, int* vetB, int* vetC){
 	for(int i = 0; i < N; i++) vetA[i] = vetB[i] = vetC[i] = (rand() % (MAX + 1 - MIN)) + MIN;
 
 }
+*/
 
 int main(void){
 
