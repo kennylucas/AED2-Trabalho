@@ -42,7 +42,7 @@ int main(void){
 	//percorrerLista(lista, imprimirNum); printf("\n");
 	for(int i =0;i<30;i++){
 
-		chave = rand()%10000000;
+		chave = rand()%10000000000;
 		//printf("chave:%d\n", chave);
 		inicio = clock();
 		buscaSequencialLista(lista, chave);
